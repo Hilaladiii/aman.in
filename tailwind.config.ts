@@ -7,79 +7,79 @@ const config: Config = {
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
-    fontSize: {
-      "72": [
-        "72px",
-        {
-          lineHeight: "90px",
-          letterSpacing: "-1.44px",
-        },
-      ],
-      "60": [
-        "60px",
-        {
-          lineHeight: "72px",
-          letterSpacing: "-1.2px",
-        },
-      ],
-      "48": [
-        "48px",
-        {
-          lineHeight: "60px",
-          letterSpacing: "-0.96px",
-        },
-      ],
-      "36": [
-        "36px",
-        {
-          lineHeight: "44px",
-          letterSpacing: "-0.72px",
-        },
-      ],
-      "30": [
-        "30px",
-        {
-          lineHeight: "38px",
-        },
-      ],
-      "24": [
-        "24px",
-        {
-          lineHeight: "32px",
-        },
-      ],
-      "20": [
-        "20px",
-        {
-          lineHeight: "30px",
-        },
-      ],
-      "18": [
-        "18px",
-        {
-          lineHeight: "28px",
-        },
-      ],
-      "16": [
-        "16px",
-        {
-          lineHeight: "24px",
-        },
-      ],
-      "14": [
-        "14px",
-        {
-          lineHeight: "20px",
-        },
-      ],
-      "12": [
-        "12px",
-        {
-          lineHeight: "18px",
-        },
-      ],
-    },
     extend: {
+      fontSize: {
+        "72": [
+          "72px",
+          {
+            lineHeight: "90px",
+            letterSpacing: "-1.44px",
+          },
+        ],
+        "60": [
+          "60px",
+          {
+            lineHeight: "72px",
+            letterSpacing: "-1.2px",
+          },
+        ],
+        "48": [
+          "48px",
+          {
+            lineHeight: "60px",
+            letterSpacing: "-0.96px",
+          },
+        ],
+        "36": [
+          "36px",
+          {
+            lineHeight: "44px",
+            letterSpacing: "-0.72px",
+          },
+        ],
+        "30": [
+          "30px",
+          {
+            lineHeight: "38px",
+          },
+        ],
+        "24": [
+          "24px",
+          {
+            lineHeight: "32px",
+          },
+        ],
+        "20": [
+          "20px",
+          {
+            lineHeight: "30px",
+          },
+        ],
+        "18px": [
+          "18px",
+          {
+            lineHeight: "28px",
+          },
+        ],
+        "16": [
+          "16px",
+          {
+            lineHeight: "24px",
+          },
+        ],
+        "14": [
+          "14px",
+          {
+            lineHeight: "20px",
+          },
+        ],
+        "12": [
+          "12px",
+          {
+            lineHeight: "18px",
+          },
+        ],
+      },
       colors: {
         primary50: "#E8F0FF",
         primary100: "#B8D2FF",
@@ -92,6 +92,8 @@ const config: Config = {
         primary800: "#0F3C8C",
         primary900: "#0B2E6B",
 
+        secondary500: "#FF3B1B",
+
         neutral100: "#D0D3D9",
         neutral200: "#B9BDC7",
         neutral500: "#667085",
@@ -101,6 +103,8 @@ const config: Config = {
 
         tertiary100: "#FFE6B8",
         tertiary500: "#FFAD1B",
+
+        error500: "#FF341A",
 
         baseblack: "#272727",
         basebackground: "#FAFAFA",
