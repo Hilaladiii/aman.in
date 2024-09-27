@@ -11,6 +11,7 @@ import Link from "next/link";
 import ShowPasswordIcon from "@/assets/icons/show-password-icon.svg";
 import HidePasswordIcon from "@/assets/icons/hide-password-icon.svg";
 import GoogleIcon from "@/assets/icons/google-icon.svg";
+import { loginGoogleService } from "@/services/user";
 
 const loginSchema = z.object({
   email: z.string().email("Email tidak valid"),
@@ -77,6 +78,9 @@ export default function LoginPage() {
       <Button
         className="flex w-full items-center justify-center gap-2 rounded-full py-3.5"
         variant="outline"
+        onClick={async () => {
+          await loginGoogleService();
+        }}
       >
         <GoogleIcon />
         Daftar Dengan Google

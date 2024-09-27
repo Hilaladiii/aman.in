@@ -18,3 +18,16 @@ export async function registerUserService({
   const res = await response.json();
   console.log(res);
 }
+
+export async function loginGoogleService() {
+  const response = await fetch(
+    `${process.env.NEXT_PUBLIC_API_PATH}/api/user/login/google`,
+    {
+      method: "GET",
+      mode: "no-cors",
+    },
+  );
+
+  const res = await response.json();
+  console.log(res);
+}
