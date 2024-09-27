@@ -55,7 +55,7 @@ const config: Config = {
             lineHeight: "30px",
           },
         ],
-        "18px": [
+        "18": [
           "18px",
           {
             lineHeight: "28px",
@@ -96,22 +96,43 @@ const config: Config = {
 
         neutral100: "#D0D3D9",
         neutral200: "#B9BDC7",
+        neutral300: "#989FAD",
         neutral500: "#667085",
         neutral600: "#5D6679",
         neutral700: "#48505E",
+        neutral800: "#383E49",
         neutral900: "#2B2F38",
 
         tertiary100: "#FFE6B8",
         tertiary500: "#FFAD1B",
 
+        error100: "#FFC0B8",
         error500: "#FF341A",
+
+        info100: "#C2B8FF",
+        info500: "#3B1BFF",
+
+        success100: "#B8FFC2",
+        success500: "#1BFF3B",
 
         baseblack: "#272727",
         basebackground: "#FAFAFA",
       },
       boxShadow: {
-        header: "0px -1px 2px 0px rgba(16, 24, 40, 0.05)",
-        footer: "0px 1px 2px 0px rgba(16, 24, 40, 0.05)",
+        header: "0px 1px 2px 0px rgba(16, 24, 40, 0.05)",
+        footer: "0px -1px 2px 0px rgba(16, 24, 40, 0.05)",
+        card: "0px 1px 3px 0px rgba(16, 24, 40, 0.10), 0px 1px 2px 0px rgba(16, 24, 40, 0.06)",
+      },
+      container: {
+        padding: {
+          DEFAULT: "1rem",
+          md: "2rem",
+          lg: "5rem",
+        },
+        center: true,
+      },
+      borderSpacing: {
+        wide: "10px",
       },
     },
   },
