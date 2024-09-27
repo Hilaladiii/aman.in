@@ -11,6 +11,7 @@ import Link from "next/link";
 import ShowPasswordIcon from "@/assets/icons/show-password-icon.svg";
 import HidePasswordIcon from "@/assets/icons/hide-password-icon.svg";
 import GoogleIcon from "@/assets/icons/google-icon.svg";
+import { registerUserService } from "@/services/user";
 
 const registerSchema = z.object({
   email: z.string().email("Email tidak valid"),
@@ -19,8 +20,8 @@ const registerSchema = z.object({
     .string()
     .min(8, "Password harus memiliki setidaknya 8 karakter")
     .regex(
-      /^(?=.*[a-zA-Z])(?=.*[0-9])(?=.*[!@#$%^&*(),.?":{}|<>])/,
-      "Password harus mengandung huruf, angka, dan simbol",
+      /^(?=.*[a-zA-Z])(?=.*[0-9])/,
+      "Password harus mengandung huruf, angka",
     ),
   privacy: z.boolean().refine((value) => value === true, {
     message: "Anda harus menyetujui kebijakan privasi",
@@ -38,8 +39,12 @@ export default function RegisterPage() {
     reset,
   } = useForm<TRegister>({ resolver: zodResolver(registerSchema) });
 
-  const onSubmit: SubmitHandler<TRegister> = (data) => {
-    console.log(data);
+  const onSubmit: SubmitHandler<TRegister> = async (data) => {
+    await registerUserService({
+      name: data.name,
+      email: data.email,
+      password: data.password,
+    });
     reset();
   };
   return (
