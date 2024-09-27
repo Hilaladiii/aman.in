@@ -2,26 +2,20 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@layer base {
+  .text_logo {
+    @apply bg-gradient-to-r from-primary300 via-primary700 to-primary300 bg-clip-text font-bold text-transparent;
+  }
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+th {
+  @apply text-18 pb-4 text-left font-medium text-baseblack last:text-right;
+}
+
+td {
+  @apply border-b-neutral300 border-b border-dashed py-4 text-16 text-black last:flex last:items-center last:justify-end last:gap-3;
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+  @apply bg-basebackground;
 }

@@ -22,13 +22,12 @@ export default function Home() {
           </h1>
           <div className="mt-14 flex items-center justify-center gap-6">
             <Button
-              label="Daftar"
-              className="rounded-xl bg-white px-8 py-4 font-semibold text-primary500"
-            />
-            <Button
-              label="Masuk"
-              className="rounded-xl bg-primary500 px-8 py-4 font-semibold text-white"
-            />
+              variant="secondary"
+              className="rounded-xl px-8 font-semibold"
+            >
+              Daftar
+            </Button>
+            <Button className="rounded-xl px-8 font-semibold">Masuk</Button>
           </div>
         </div>
       </div>
