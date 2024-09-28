@@ -20,7 +20,7 @@ export function useRegister() {
       router.push("/auth/login");
       toast.success("Berhasil mendaftarkan akun anda");
     } else {
-      toast.error(res.message);
+      toast.error(res.error);
     }
   };
 
