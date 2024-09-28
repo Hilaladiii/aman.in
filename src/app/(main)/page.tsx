@@ -3,6 +3,7 @@ import BackgroundLanding from "@/assets/images/background-landing.png";
 import CardFeature from "@/components/CardFeature";
 import Button from "@/components/ui/Button";
 import { FEATURES } from "@/constants/feature";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -21,13 +22,17 @@ export default function Home() {
             </span>
           </h1>
           <div className="mt-14 flex items-center justify-center gap-6">
-            <Button
-              variant="secondary"
-              className="rounded-xl px-8 font-semibold"
-            >
-              Daftar
-            </Button>
-            <Button className="rounded-xl px-8 font-semibold">Masuk</Button>
+            <Link href="/auth/register">
+              <Button
+                variant="secondary"
+                className="rounded-xl px-8 font-semibold"
+              >
+                Daftar
+              </Button>
+            </Link>
+            <Link href="/auth/login">
+              <Button className="rounded-xl px-8 font-semibold">Masuk</Button>
+            </Link>
           </div>
         </div>
       </div>
