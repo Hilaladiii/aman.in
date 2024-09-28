@@ -63,7 +63,12 @@ export default function LoginForm() {
         />
 
         <div className="mt-2 flex items-center gap-6">
-          <Button type="submit" variant="tertiary" className="rounded-full">
+          <Button
+            type="submit"
+            variant="tertiary"
+            className="rounded-full"
+            disabled={isSubmitting}
+          >
             {isSubmitting ? "Loading..." : "Masuk"}
           </Button>
           <p className="text-18 text-baseblack">

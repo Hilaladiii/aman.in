@@ -144,7 +144,12 @@ export default function ModalAddComponent({
             >
               Batalkan
             </Button>
-            <Button className="w-full" variant="tertiary" type="submit">
+            <Button
+              className="w-full"
+              variant="tertiary"
+              type="submit"
+              disabled={isSubmitting}
+            >
               {isSubmitting ? "Uploading..." : "Tambah Dokumen"}
             </Button>
           </div>
