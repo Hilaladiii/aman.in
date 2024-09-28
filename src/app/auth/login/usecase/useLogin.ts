@@ -20,11 +20,6 @@ export function useLogin() {
       const decodedToken = jwtDecode(res.data.token);
       const expirationTime = new Date(decodedToken.exp! * 1000);
 
-      setCookie("user-data", JSON.stringify(res.data), {
-        expires: expirationTime,
-        path: "/",
-      });
-
       setCookie("token", res.data.token, {
         expires: expirationTime,
         path: "/",
