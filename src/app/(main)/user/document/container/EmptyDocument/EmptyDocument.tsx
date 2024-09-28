@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Button from "@/components/ui/Button";
-import ModalAddComponent from "./ModalAddDocument";
+import ModalAddComponent from "../Modal/ModalAddDocument";
 import PlusIcon from "@/assets/icons/plus-icon.svg";
 
 export default function EmptyDocument() {

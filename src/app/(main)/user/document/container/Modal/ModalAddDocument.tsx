@@ -2,32 +2,13 @@
 
 import Modal from "@/components/Modal";
 import Input from "@/components/ui/Input";
-import { OPTIONDOCUMENTS, OPTION } from "@/constants/document";
-import { z } from "zod";
-import { useForm, SubmitHandler } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
 import Button from "@/components/ui/Button";
 import UploadIcon from "@/assets/icons/upload-icon.svg";
-
-const documentSchema = z.object({
-  option: z.nativeEnum(OPTION, {
-    message: "Opsi dokumen wajib diisi",
-  }),
-  documentNumber: z.string().min(1, "Nomor dokumen wajib diisi"),
-  file: z
-    .instanceof(File, { message: "File dokumen wajib diisi" })
-    .refine((file) => file.size <= 3 * 1024 * 1024, "Maksimal ukuran file 3MB")
-    .refine(
-      (file) =>
-        [
-          "application/pdf",
-          "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
-        ].includes(file.type),
-      "File harus bertipe pdf atau docx",
-    ),
-});
-
-type TDocument = z.infer<typeof documentSchema>;
+import { OPTIONDOCUMENTS } from "@/constants/document";
+import { useForm, SubmitHandler } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { TDocument, documentSchema } from "../../model/document";
+import { useUploadDocument } from "../../usecase/useUploadDocument";
 
 export default function ModalAddComponent({
   show,
@@ -36,10 +17,11 @@ export default function ModalAddComponent({
   show: boolean;
   onClose: () => void;
 }) {
+  const { uploadDocument } = useUploadDocument();
   const {
     register,
     handleSubmit,
-    formState: { errors },
+    formState: { errors, isSubmitting },
     reset,
     watch,
     setValue,
@@ -53,8 +35,8 @@ export default function ModalAddComponent({
   const watchFile = watch("file");
   const fileName = watchFile instanceof File ? watchFile.name : undefined;
 
-  const onSubmit: SubmitHandler<TDocument> = (data) => {
-    console.log(data);
+  const onSubmit: SubmitHandler<TDocument> = async (data) => {
+    await uploadDocument(data);
     reset();
   };
 
@@ -163,7 +145,7 @@ export default function ModalAddComponent({
               Batalkan
             </Button>
             <Button className="w-full" variant="tertiary" type="submit">
-              Tambah Dokumen
+              {isSubmitting ? "Uploading..." : "Tambah Dokumen"}
             </Button>
           </div>
         </form>

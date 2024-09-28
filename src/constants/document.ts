@@ -1,9 +1,3 @@
-export enum OPTION {
-  SIM = "SIM",
-  KTP = "KTP",
-  AKTA = "AKTA",
-  LAINNYA = "LAINNYA",
-}
 export const OPTIONDOCUMENTS = [
   {
     name: "Kartu Tanda Penduduk",
