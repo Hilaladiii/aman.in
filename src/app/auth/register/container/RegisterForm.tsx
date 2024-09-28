@@ -36,7 +36,7 @@ export default function RegisterForm() {
   const {
     register,
     handleSubmit,
-    formState: { errors },
+    formState: { errors, isSubmitting },
     reset,
   } = useForm<TRegister>({ resolver: zodResolver(registerSchema) });
 
@@ -108,7 +108,7 @@ export default function RegisterForm() {
 
         <div className="mt-2 flex items-center gap-6">
           <Button type="submit" variant="tertiary" className="rounded-full">
-            Daftar
+            {isSubmitting ? "Loading..." : "Daftar"}
           </Button>
           <p className="text-18 text-baseblack">
             Sudah memiliki akun?{" "}
