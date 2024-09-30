@@ -4,19 +4,24 @@ import ProfileIcon from "@/assets/icons/profile-icon.svg";
 import RequestDocumentIcon from "@/assets/icons/request-document-icon.svg";
 import Status from "./ui/Status";
 
-// interface CardDocumentProps {
-//   type: "KTP" | "SIM" | "AKTA" | "LAINNYA";
-//   totalAccessed: string;
-//   totalRequest: string;
-//   status: "VERIFIKASI" | "BERHASIL" | "DITOLAK";
-// }
+interface CardDocumentProps {
+  type: "KTP" | "SIM" | "AKTA" | "LAINNYA";
+  totalAccessed: string;
+  totalRequest: string;
+  status: -1 | 0 | 1;
+}
 
-export default function CardDocument() {
+export default function CardDocument({
+  status,
+  totalAccessed,
+  totalRequest,
+  type,
+}: CardDocumentProps) {
   return (
     <div className="w-fit overflow-hidden rounded-lg bg-white shadow-card">
       <div className="relative">
         <Image src={KTPImage} alt="ktp" />
-        <Status status="DITOLAK" className="absolute bottom-2 left-2" />
+        <Status status={status} className="absolute bottom-2 left-2" />
       </div>
       <div className="flex flex-col items-start justify-start px-3 py-4">
         <h2 className="text-20 font-semibold text-baseblack">
