@@ -1,5 +1,5 @@
 import toast from "react-hot-toast";
-import { TDocument } from "../model/document";
+import { TDocument } from "../model/documentValidator";
 import { uploadDocumentRepository } from "../repository/userDocumentRepository";
 import { getCookie } from "cookies-next";
 
@@ -16,6 +16,7 @@ export function useUploadDocument() {
     const res = await uploadDocumentRepository(formData, token!.toString());
     if (res.status == "success") {
       toast.success(res.message);
+      window.location.href = "/user/document";
     } else {
       toast.error(res.message);
     }

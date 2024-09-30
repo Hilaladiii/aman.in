@@ -7,16 +7,15 @@ import UploadIcon from "@/assets/icons/upload-icon.svg";
 import { OPTIONDOCUMENTS } from "@/constants/document";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { TDocument, documentSchema } from "../../model/document";
-import { useUploadDocument } from "../../usecase/useUploadDocument";
+import { useUploadDocument } from "../../document/usecase/useUploadDocument";
+import {
+  documentSchema,
+  TDocument,
+} from "../../document/model/documentValidator";
+import { useRouter } from "next/navigation";
 
-export default function ModalAddComponent({
-  show,
-  onClose,
-}: {
-  show: boolean;
-  onClose: () => void;
-}) {
+export default function AddDocument() {
+  const router = useRouter();
   const { uploadDocument } = useUploadDocument();
   const {
     register,
@@ -39,9 +38,8 @@ export default function ModalAddComponent({
     await uploadDocument(data);
     reset();
   };
-
   return (
-    <Modal show={show} onClose={onClose}>
+    <Modal>
       <div>
         <div className="flex flex-col items-center">
           <h1 className="text-30 font-semibold text-baseblack">
@@ -137,8 +135,8 @@ export default function ModalAddComponent({
               className="w-1/2"
               variant="ghost"
               onClick={() => {
-                onClose();
                 reset();
+                router.back();
               }}
               type="button"
             >
