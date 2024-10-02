@@ -24,8 +24,8 @@ export default function CardDocument({
         <Image
           src={typeDoc.image!}
           alt={typeDoc.text}
-          width={236}
-          height={100}
+          width={250}
+          height={170}
         />
         <Status status={status} className="absolute bottom-2 left-2" />
       </Link>
