@@ -11,7 +11,6 @@ export function useUploadDocument() {
     formData.append("type", data.option);
 
     const token = getCookie("token");
-    console.log(token);
 
     const res = await uploadDocumentRepository(formData, token!.toString());
     if (res.status == "success") {

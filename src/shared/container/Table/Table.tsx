@@ -1,13 +1,9 @@
-"use client";
-import ModalReport from "@/app/(main)/user/history/_components/ModalReport";
-import Button from "./ui/Button";
-import { useState } from "react";
+import Link from "next/link";
+import Button from "../Button/Button";
 
 export default function Table() {
-  const [show, setShow] = useState(false);
   return (
     <>
-      <ModalReport show={show} onClose={() => setShow(false)} />
       <table className="w-full">
         <thead>
           <tr className="border-b border-b-neutral500 pb-4">
@@ -29,12 +25,11 @@ export default function Table() {
                 <Button className="rounded-lg bg-tertiary500 px-2 py-1.5 text-base">
                   Hapus akses
                 </Button>
-                <Button
-                  className="rounded-lg bg-secondary500 px-2 py-1.5 text-base"
-                  onClick={() => setShow(true)}
-                >
-                  Laporkan
-                </Button>
+                <Link href={"/user/report"}>
+                  <Button className="rounded-lg bg-secondary500 px-2 py-1.5 text-base">
+                    Laporkan
+                  </Button>
+                </Link>
               </td>
             </tr>
           ))}

@@ -1,4 +1,4 @@
-import Button from "@/components/ui/Button";
+import Button from "@/shared/container/Button/Button";
 import PlusIcon from "@/assets/icons/plus-icon.svg";
 import Link from "next/link";
 

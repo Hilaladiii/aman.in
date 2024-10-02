@@ -1,7 +1,7 @@
 import Link from "next/link";
-import CardDocument from "@/components/CardDocument";
-import Button from "@/components/ui/Button";
+import Button from "@/shared/container/Button/Button";
 import PlusIcon from "@/assets/icons/plus-icon.svg";
+import CardDocument from "@/shared/container/Card/CardDocument";
 import EmptyDocument from "./EmptyDocument/EmptyDocument";
 import { IDocument } from "../model/documentInterfaces";
 import { useGetDocuments } from "../usecase/useGetDocuments";
@@ -12,13 +12,13 @@ export default async function UserDocumentContainer() {
     <div className="mx-10 mt-10">
       {Array.isArray(documents.data) ? (
         <>
-          <div className="mx-auto flex flex-wrap justify-center gap-6">
+          <div className="mx-auto flex max-w-6xl flex-wrap justify-start gap-6">
             {documents.data.map((document: IDocument, index: number) => (
               <CardDocument
+                id={document.id}
                 status={document.status}
                 type={document.type}
-                totalAccessed="9"
-                totalRequest="10"
+                totalAccessed={document.user_count.toString()}
                 key={index}
               />
             ))}

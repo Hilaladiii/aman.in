@@ -1,8 +1,8 @@
 "use client";
 
-import Modal from "@/components/Modal";
-import Input from "@/components/ui/Input";
-import Button from "@/components/ui/Button";
+import Modal from "@/shared/container/Modal/Modal";
+import Input from "@/shared/container/Input/Input";
+import Button from "@/shared/container/Button/Button";
 import UploadIcon from "@/assets/icons/upload-icon.svg";
 import { OPTIONDOCUMENTS } from "@/constants/document";
 import { useForm, SubmitHandler } from "react-hook-form";

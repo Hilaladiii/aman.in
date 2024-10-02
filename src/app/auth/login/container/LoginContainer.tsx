@@ -1,4 +1,4 @@
-import AuthLayout from "@/components/layouts/AuthLayout";
+import AuthLayout from "@/shared/container/Layouts/AuthLayout";
 import LoginForm from "./LoginForm";
 
 export default function LoginContainer() {

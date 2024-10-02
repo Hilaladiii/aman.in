@@ -1,4 +1,4 @@
-import AuthLayout from "@/components/layouts/AuthLayout";
+import AuthLayout from "@/shared/container/Layouts/AuthLayout";
 import RegisterForm from "./RegisterForm";
 
 export default function RegisterContainer() {

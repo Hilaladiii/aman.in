@@ -1,7 +1,7 @@
 import Image from "next/image";
 import BackgroundLanding from "@/assets/images/background-landing.png";
-import CardFeature from "@/components/CardFeature";
-import Button from "@/components/ui/Button";
+import CardFeature from "@/shared/container/Card/CardFeature";
+import Button from "@/shared/container/Button/Button";
 import { FEATURES } from "@/constants/feature";
 import Link from "next/link";
 

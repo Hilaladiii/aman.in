@@ -1,4 +1,4 @@
-import Table from "@/components/Table";
+import Table from "@/shared/container/Table/Table";
 
 export default function HistoryPage() {
   return (

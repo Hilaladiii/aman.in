@@ -19,9 +19,6 @@ export async function getDocumentsRepository(token: string) {
     headers: {
       Authorization: `Bearer ${token}`,
     },
-    next: {
-      tags: ["documents"],
-    },
   });
 
   const res = await response.json();
