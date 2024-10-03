@@ -22,31 +22,49 @@ export default async function UserDocumentDetailContainer({
             user_count={document.user_count}
           />
           <div className="flex w-3/5 flex-col">
-            <div className="flex flex-row justify-between">
-              <h2 className="text-24 font-semibold">Riwayat Akses</h2>
-              <div className="inline-flex items-center justify-start gap-2">
-                <ProfileIcon className="size-7" />
-                <span className="text-20 font-medium text-neutral800">
-                  {Array.isArray(document.emails) ? document.emails.length : 0}{" "}
-                  Pihak
-                </span>
+            {document.status == 1 ? (
+              <>
+                <div className="flex flex-row justify-between">
+                  <h2 className="text-24 font-semibold">Riwayat Akses</h2>
+                  <div className="inline-flex items-center justify-start gap-2">
+                    <ProfileIcon className="size-7" />
+                    <span className="text-20 font-medium text-neutral800">
+                      {Array.isArray(document.emails)
+                        ? document.emails.length
+                        : 0}{" "}
+                      Pihak
+                    </span>
+                  </div>
+                </div>
+                <div className="mt-4">
+                  {Array.isArray(document.emails) &&
+                    document.emails.map((email, index) => (
+                      <h3 className="text-18 font-medium" key={index}>
+                        {email}
+                      </h3>
+                    ))}
+                </div>
+                <div className="mt-8 flex justify-end">
+                  <Link href={`/user/add-access/${id}`}>
+                    <Button className="inline-flex w-full items-center justify-center gap-2.5 rounded-full text-center">
+                      <PlusIcon /> Tambah Pihak Akses
+                    </Button>
+                  </Link>
+                </div>
+              </>
+            ) : document.status == 0 ? (
+              <div className="w-full text-left text-neutral900">
+                Anda belum dapat memberikan akses kepada orang lain karena
+                dokumen Anda belum terverifikasi. Silakan tunggu hingga proses
+                verifikasi selesai.
               </div>
-            </div>
-            <div className="mt-4">
-              {Array.isArray(document.emails) &&
-                document.emails.map((email, index) => (
-                  <h3 className="text-18 font-medium" key={index}>
-                    {email}
-                  </h3>
-                ))}
-            </div>
-            <div className="mt-8 flex justify-end">
-              <Link href={`/user/add-access/${id}`}>
-                <Button className="inline-flex w-full items-center justify-center gap-2.5 rounded-full text-center">
-                  <PlusIcon /> Tambah Pihak Akses
-                </Button>
-              </Link>
-            </div>
+            ) : (
+              <div className="w-full text-left text-neutral900">
+                Anda tidak dapat memberikan akses kepada orang lain karena
+                dokumen Anda telah ditolak dalam proses verifikasi. Silakan
+                periksa kembali dokumen Anda dan ajukan verifikasi ulang.
+              </div>
+            )}
           </div>
         </div>
       </div>
