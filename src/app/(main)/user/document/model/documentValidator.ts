@@ -20,8 +20,10 @@ export const documentSchema = z.object({
         [
           "application/pdf",
           "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+          "image/png",
+          "image/jpeg",
         ].includes(file.type),
-      "File harus bertipe pdf atau docx",
+      "File harus bertipe pdf, docx, png, atau jpg/jpeg",
     ),
 });
 
