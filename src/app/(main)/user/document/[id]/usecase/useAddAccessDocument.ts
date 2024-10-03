@@ -15,7 +15,9 @@ export function useAddAccessDocument() {
 
     if (res.status == "success") {
       window.location.href = `/user/document/${id}`;
-      toast.success(res.message);
+      toast.success("Berhasil menambahkan akses");
+    } else {
+      toast.error("Gagal menambahkan akses");
     }
   };
   return {

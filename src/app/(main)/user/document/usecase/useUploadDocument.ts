@@ -14,10 +14,10 @@ export function useUploadDocument() {
 
     const res = await uploadDocumentRepository(formData, token!.toString());
     if (res.status == "success") {
-      toast.success(res.message);
+      toast.success("Berhasil menambahkan dokumen");
       window.location.href = "/user/document";
     } else {
-      toast.error(res.message);
+      toast.error("Gagal menambahkan dokumen");
     }
   };
   return { uploadDocument };
