@@ -3,7 +3,7 @@
 import Link from "next/link";
 import Button from "../Button/Button";
 import { dateTimeFormatter } from "@/shared/usecase/dateTimeFormatter";
-import { useDeleteAccess } from "@/app/(main)/user/history/usecase/useDeleteAccess";
+import { actionDeleteAccess } from "@/app/(main)/user/history/usecase/actionDeleteAccess";
 
 interface ITableProps {
   doc_id: string;
@@ -18,10 +18,11 @@ export default function Table({ data }: { data: ITableProps[] | null }) {
   if (data == null) {
     return <div>Tidak ada history akses</div>;
   }
-  const { deleteAccess } = useDeleteAccess();
+  const { deleteAccess } = actionDeleteAccess();
   const onDelete = async (doc_id: string, accessor_id: string) => {
     await deleteAccess({ doc_id, accessor_id });
   };
+
   return (
     <>
       <table className="w-full">
