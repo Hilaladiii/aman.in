@@ -29,7 +29,6 @@ export default function AddAccess({ params }: { params: { id: string } }) {
 
   const onSubmit: SubmitHandler<TAccess> = async (data) => {
     await addAccessDocument(params.id, data);
-    console.log(data);
   };
   return (
     <Modal>
