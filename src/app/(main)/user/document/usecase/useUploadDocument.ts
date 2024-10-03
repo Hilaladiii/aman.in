@@ -1,5 +1,5 @@
 import toast from "react-hot-toast";
-import { TDocument } from "../model/documentValidator";
+import { OPTION, TDocument } from "../model/documentValidator";
 import { uploadDocumentRepository } from "../repository/userDocumentRepository";
 import { getCookie } from "cookies-next";
 
@@ -8,7 +8,11 @@ export function useUploadDocument() {
     const formData = new FormData();
     formData.append("file", data.file);
     formData.append("number", data.documentNumber);
-    formData.append("type", data.option);
+    if (data.option == OPTION.LAINNYA) {
+      formData.append("type", data.documentName!);
+    } else {
+      formData.append("type", data.option);
+    }
 
     const token = getCookie("token");
 

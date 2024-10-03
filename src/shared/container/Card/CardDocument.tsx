@@ -6,7 +6,7 @@ import { useTypeDoc } from "@/shared/usecase/useTypeDoc";
 
 interface CardDocumentProps {
   id: string;
-  type: "KTP" | "SIM" | "AKTA" | "LAINNYA";
+  type: "KTP" | "SIM" | "AKTA";
   totalAccessed: string;
   status: -1 | 0 | 1;
 }

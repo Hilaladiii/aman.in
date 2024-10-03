@@ -3,7 +3,7 @@ import SIMImage from "@/assets/images/sim.png";
 import AktaImage from "@/assets/images/akta.png";
 import LainnyaImage from "@/assets/images/lainnya.png";
 
-export function useTypeDoc(type: "SIM" | "KTP" | "AKTA" | "LAINNYA") {
+export function useTypeDoc(type: "SIM" | "KTP" | "AKTA") {
   const typeDoc = (() => {
     switch (type) {
       case "KTP":
@@ -12,10 +12,8 @@ export function useTypeDoc(type: "SIM" | "KTP" | "AKTA" | "LAINNYA") {
         return { text: "Surat Izin Mengemudi", image: SIMImage };
       case "AKTA":
         return { text: "Akta Kelahiran", image: AktaImage };
-      case "LAINNYA":
-        return { text: "Dokumen Lainnya", image: LainnyaImage };
       default:
-        return { text: "", image: null };
+        return { text: type, image: LainnyaImage };
     }
   })();
   return typeDoc;

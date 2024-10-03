@@ -10,6 +10,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useUploadDocument } from "../../document/usecase/useUploadDocument";
 import {
   documentSchema,
+  OPTION,
   TDocument,
 } from "../../document/model/documentValidator";
 import { useRouter } from "next/navigation";
@@ -32,6 +33,7 @@ export default function AddDocument() {
   });
 
   const watchFile = watch("file");
+  const isOther = watch("option");
   const fileName = watchFile instanceof File ? watchFile.name : undefined;
 
   const onSubmit: SubmitHandler<TDocument> = async (data) => {
@@ -73,6 +75,16 @@ export default function AddDocument() {
               </span>
             )}
           </div>
+          {isOther === OPTION.LAINNYA && (
+            <Input
+              label="Nama Dokumen"
+              register={register}
+              name="documentName"
+              type="text"
+              placeholder="Masukkan nama dokumen..."
+              errors={errors.documentName}
+            />
+          )}
           <Input
             label="Nomor Dokumen"
             register={register}

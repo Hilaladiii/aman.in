@@ -11,6 +11,7 @@ export const documentSchema = z.object({
   option: z.nativeEnum(OPTION, {
     message: "Opsi dokumen wajib diisi",
   }),
+  documentName: z.string().min(1, "Nama dokumen wajib diisi").optional(),
   documentNumber: z.string().min(1, "Nomor dokumen wajib diisi"),
   file: z
     .instanceof(File, { message: "File dokumen wajib diisi" })
