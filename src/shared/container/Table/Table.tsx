@@ -22,13 +22,9 @@ export default function Table() {
               <td>1234567890123456</td>
               <td>30 Agustus 2024</td>
               <td>
-                <Button className="rounded-lg bg-tertiary500 px-2 py-1.5 text-base">
-                  Hapus akses
-                </Button>
+                <Button variant="danger">Hapus akses</Button>
                 <Link href={"/user/report"}>
-                  <Button className="rounded-lg bg-secondary500 px-2 py-1.5 text-base">
-                    Laporkan
-                  </Button>
+                  <Button variant="warning">Laporkan</Button>
                 </Link>
               </td>
             </tr>

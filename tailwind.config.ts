@@ -93,6 +93,7 @@ const config: Config = {
         primary800: "#0F3C8C",
         primary900: "#0B2E6B",
 
+        secondary200: "#FFA596",
         secondary500: "#FF3B1B",
 
         neutral100: "#D0D3D9",
@@ -105,6 +106,7 @@ const config: Config = {
         neutral900: "#2B2F38",
 
         tertiary100: "#FFE6B8",
+        teriary200: "#FFD996",
         tertiary500: "#FFAD1B",
 
         error100: "#FFC0B8",
@@ -114,7 +116,9 @@ const config: Config = {
         info500: "#3B1BFF",
 
         success100: "#B8FFC2",
+        success200: "#96FFA5",
         success500: "#1BFF3B",
+        success600: "#19E836",
 
         baseblack: "#272727",
         basebackground: "#FAFAFA",
