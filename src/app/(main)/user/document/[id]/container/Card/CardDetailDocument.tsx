@@ -11,7 +11,7 @@ export default function CardDetailDocument({
   user_count,
 }: {
   status: -1 | 0 | 1;
-  type: "SIM" | "KTP" | "AKTA" | "LAINNYA";
+  type: "SIM" | "KTP" | "AKTA";
   user_count: number;
 }) {
   const typeDoc = useTypeDoc(type);
