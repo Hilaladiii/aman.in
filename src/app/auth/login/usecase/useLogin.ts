@@ -23,6 +23,8 @@ export function useLogin() {
       setCookie("token", res.data.token, {
         expires: expirationTime,
         path: "/",
+        secure: true,
+        sameSite: "strict",
       });
 
       router.push("/user/document");
